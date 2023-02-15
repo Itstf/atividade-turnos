@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha de Turno</title>
+</head>
+<body>
+  <label for="turnos">Em que turno você estuda?</label>
+  <select id="turnos">
+    <option value="">Escolha seu turno</option>
+    <option value="m">M (matutino)</option>
+    <option value="v">V (vespertino)</option>
+    <option value="n">N (noturno)</option>
+  </select>
+
+  <p></p>
+
+  <script>
+    const select = document.getElementById('turnos');
+    const p = document.querySelector('p');
+
+    select.addEventListener('change', setHoroscopo);
+
+    function setHoroscopo() {
+      let turnoSelecionado = select.value;
+
+      if (turnoSelecionado === 'm') {
+        p.textContent = 'Bom dia!';
+      } else if (turnoSelecionado === 'v') {
+        p.textContent = 'Boa tarde!';
+      } else if (turnoSelecionado === 'n') {
+        p.textContent = 'Boa noite!';
+      } else {
+        p.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html> 
